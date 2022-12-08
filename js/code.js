@@ -5,7 +5,8 @@ let products = {
         image : "https://i.postimg.cc/JhCpLBwq/Bud-Special.png",
         price: 200,
         category:"beer",
-        quantity: "24 x 330ml"
+        quantity: "24 x 330ml",
+        button :"Add"
     },
     {
                 id: 2,
@@ -13,7 +14,8 @@ let products = {
                 image : "https://i.postimg.cc/9z377ZYg/Savanna-Pack.jpg",
                 price: 200,
                 category: "cider",
-                quantity: "24 x 330ml"
+                quantity: "24 x 330ml",
+                button :"Add"
         
             },
             {
@@ -22,7 +24,8 @@ let products = {
                 image : "https://i.postimg.cc/P5TMVn13/Russian-Bear.png",
                 price: 154,
                 category: "vodka",
-                quantity: "1 litre"
+                quantity: "1 litre",
+                button :"Add"
         
             },
             {
@@ -31,7 +34,8 @@ let products = {
                 image : "https://i.postimg.cc/pLcnfwCn/4th-Street-Wine.png",
                 price: 130,
                 category: "wine",
-                quantity: "5 litres"
+                quantity: "5 litres",
+                button :"Add"
         
             },
             {
@@ -40,7 +44,8 @@ let products = {
                 image : "https://i.postimg.cc/TPWhrphZ/first-Watch.jpg",
                 price: 170,
                 category: "whisky",
-                quantity: "750ml"
+                quantity: "750ml",
+                button :"Add"
         
             },
             {
@@ -49,7 +54,8 @@ let products = {
                 image : "https://i.postimg.cc/4dsZmdcv/LeRoux.png",
                 price: 185,
                 category: "champaign",
-                quantity: "750ml"
+                quantity: "750ml",
+                button :"Add"
         
             },
             {
@@ -58,7 +64,8 @@ let products = {
                 image : "https://i.postimg.cc/WbCxK35N/flying-Fish2-0.webp",
                 price: 100,
                 category: "beer",
-                quantity: "500ml X 6"
+                quantity: "500ml X 6",
+                button :"Add"
         
             },
             {
@@ -67,7 +74,9 @@ let products = {
                 image : "https://i.postimg.cc/mrT69Fdr/Bernini-Blush.png",
                 price: 270,
                 category: "cider",
-                quantity: "440ml x 6"
+                quantity: "440ml x 6",
+                button :"Add",
+                button :"Add"
         
             },
             {
@@ -76,7 +85,8 @@ let products = {
                 image : "https://i.postimg.cc/JzQCS8vG/oldBuck.png",
                 price: 130,
                 category: "gin",
-                quantity: "750ml"
+                quantity: "750ml",
+                button :"Add"
         
             },
             {
@@ -94,7 +104,8 @@ let products = {
                 image : "https://i.postimg.cc/50BBSP6d/Gordons.png",
                 price: 180,
                 category: "gin",
-                quantity: "750ml"
+                quantity: "750ml",
+                button :"Add"
 
         
             },
@@ -104,7 +115,10 @@ let products = {
                 image : "https://i.postimg.cc/8zxLQ8vg/raindance.jpg",
                 price: 110,
                 category: "wine",
-                quantity : "5 litres"
+                quantity : "5 litres",
+                button :"Add"
+
+                
         
             },
 ],
@@ -127,8 +141,7 @@ for (let i of products.data){
     name.classList.add("product-name");
     name.innerText = i.productName.toUpperCase();
     container.appendChild(name);
-    let cart = document.createElement("i");
-    cart.innerHTML += `<i class="fa-solid fa-cart-plus"></i>`
+   
     //price
     let priceR = document.createElement("small");
     priceR.classList.add("product-price");
@@ -146,6 +159,9 @@ for (let i of products.data){
     container.appendChild(quants);
     card.appendChild(container)
     document.getElementById("Products").appendChild(card);
+
+    //button
+
 
 };
 
