@@ -10,38 +10,93 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css" 
 integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles/style.css">
-    <title>Booze</title>
+    <title>Admin</title>
 </head>
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg bg-danger w-100 top-0 position-fixed">
-      <div class="container-fluid">
-        <img src="./assets/logo.jpg" class="logo" alt="logo" loading="lazy">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav m-auto my-2 mb-lg-0 bg-danger">
-            <li class="nav-item">
-              <a class="nav-link" id="highlight" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="checkout.html"><i class="fa-solid fa-cart-plus"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="admin.html" >Admin</a>
+<header>
+  <nav class="navbar navbar-expand-lg bg-danger w-100 top-0 position-fixed">
+    <div class="container-fluid">
+      <img src="./assets/logo.jpg" class="logo" alt="logo" loading="lazy">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto my-2 mb-lg-0 bg-danger">
+          <li class="nav-item">
+            <a class="nav-link" id="highlight" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="checkout.html"><i class="fa-solid fa-cart-plus"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="admin.html" >Admin</a>
 
-              </a>
-            </li>
-          </ul>
+            
+          </li>
+        </ul>
 
-        </div>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
+</header>
+<body>
+  <br><br><br><br>
+  <fieldset>
+    <legend><h2>Add Product</h2></legend>
+  
+<form>
+<div class="inputBox">
+  <input type="text" required="required" id="id">
+  <span>ID</span>
+</div>
+<div class="inputBox">
+  <input type="text" required="required" id="ProductName">
+  <span>Product Name</span>
+</div>
+<div class="inputBox">
+  <input type="text" required="required" id="price">
+  <span>Price</span>
+</div>
+<div class="inputBox">
+  <input type="text" required="required" id="category">
+  <span>Category</span>
+</div>
+<div class="inputBox">
+  <input type="text" required="required" id="quantity">
+  <span>Quantity</span>
+</div>
+<div class="inputBox">
+  <input type="text" required="required" id="image">
+  <span>Image URL(PostImage)</span>
+</div>
+<div class="crudButtons">
+  <input type="button" value="Add Product" id="btn" onclick="submit(event)">
+  <input type="reset" value="Reset">
+</div>
+</form>
 
-
+</fieldset>
+<br>
+<div id="msg"></div><br>
+<fieldset>
+  <legend>
+    <h2>Available Items</h2>
+  </legend>
+  <table class="table" id="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Category</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Product Image</th>
+      </tr>
+    </thead>
+    
+    </tbody>
+  </table>
+</fieldset>
 <footer>
   <img src="./assets/FooterIMG.png" alt="footImg" class="footPic">
 <small>Not for sale to persons under age of 18. Drink responsibly</small>
@@ -53,6 +108,7 @@ integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipui
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="./js/admin.js"></script>
 <script src="./js/code.js"></script>
 </body>
 </html>

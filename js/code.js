@@ -3,7 +3,7 @@ let products = {
         id: 1,
         productName: "Budwiser",
         image : "https://i.postimg.cc/JhCpLBwq/Bud-Special.png",
-        price: "R200",
+        price: 200,
         category:"beer",
         quantity: "24 x 330ml"
     },
@@ -11,7 +11,7 @@ let products = {
                 id: 2,
                 productName: "savanna",
                 image : "https://i.postimg.cc/9z377ZYg/Savanna-Pack.jpg",
-                price: "R200",
+                price: 200,
                 category: "cider",
                 quantity: "24 x 330ml"
         
@@ -20,7 +20,7 @@ let products = {
                 id: 3,
                 productName: "Russian Bear",
                 image : "https://i.postimg.cc/P5TMVn13/Russian-Bear.png",
-                price: "R154",
+                price: 154,
                 category: "vodka",
                 quantity: "1 litre"
         
@@ -29,7 +29,7 @@ let products = {
                 id: 4,
                 productName: "4th-street",
                 image : "https://i.postimg.cc/pLcnfwCn/4th-Street-Wine.png",
-                price: "R130",
+                price: 130,
                 category: "wine",
                 quantity: "5 litres"
         
@@ -38,7 +38,7 @@ let products = {
                 id: 5,
                 productName: "firstwatch",
                 image : "https://i.postimg.cc/TPWhrphZ/first-Watch.jpg",
-                price: "R170",
+                price: 170,
                 category: "whisky",
                 quantity: "750ml"
         
@@ -47,7 +47,7 @@ let products = {
                 id: 6,
                 productName: "J.C. Le Roux Domaine Premium",
                 image : "https://i.postimg.cc/4dsZmdcv/LeRoux.png",
-                price: "R185",
+                price: 185,
                 category: "champaign",
                 quantity: "750ml"
         
@@ -56,7 +56,7 @@ let products = {
                 id: 7,
                 productName: "Flying Fish",
                 image : "https://i.postimg.cc/WbCxK35N/flying-Fish2-0.webp",
-                price: "R100",
+                price: 100,
                 category: "beer",
                 quantity: "500ml X 6"
         
@@ -65,7 +65,7 @@ let products = {
                 id: 8,
                 productName: "Bernini Blush",
                 image : "https://i.postimg.cc/mrT69Fdr/Bernini-Blush.png",
-                price: "R270",
+                price: 270,
                 category: "cider",
                 quantity: "440ml x 6"
         
@@ -74,7 +74,7 @@ let products = {
                 id: 9,
                 productName: "Old Buck",
                 image : "https://i.postimg.cc/JzQCS8vG/oldBuck.png",
-                price: "R130",
+                price: 130,
                 category: "gin",
                 quantity: "750ml"
         
@@ -83,7 +83,7 @@ let products = {
                 id: 10,
                 productName: "Hennesy",
                 image : "https://i.postimg.cc/D0KPs96K/Hennesy2-1.png",
-                price: "R420",
+                price: 420,
                 category: "brandy",
                 quantity: "750ml"
         
@@ -92,7 +92,7 @@ let products = {
                 id: 11,
                 productName: "Gordon's Gin",
                 image : "https://i.postimg.cc/50BBSP6d/Gordons.png",
-                price: "R180",
+                price: 180,
                 category: "gin",
                 quantity: "750ml"
 
@@ -102,7 +102,7 @@ let products = {
                 id: 12,
                 productName: "Rain Dance",
                 image : "https://i.postimg.cc/8zxLQ8vg/raindance.jpg",
-                price: "R110",
+                price: 110,
                 category: "wine",
                 quantity : "5 litres"
         
@@ -112,7 +112,7 @@ let products = {
 //Create cards
 for (let i of products.data){
     let card = document.createElement("div");
-    card.classList.add("card", "i.category");
+    card.classList.add("card", "i.category", "hide");
     let imgContainer = document.createElement("div");
     imgContainer.classList.add("image-container");
     let image = document.createElement("img");
@@ -127,10 +127,12 @@ for (let i of products.data){
     name.classList.add("product-name");
     name.innerText = i.productName.toUpperCase();
     container.appendChild(name);
+    let cart = document.createElement("i");
+    cart.innerHTML += `<i class="fa-solid fa-cart-plus"></i>`
     //price
     let priceR = document.createElement("small");
     priceR.classList.add("product-price");
-    priceR.innerText = i.price;
+    priceR.innerText ="R" + i.price;
     container.appendChild(priceR);
     //category
     let categs = document.createElement("p");
@@ -143,9 +145,41 @@ for (let i of products.data){
     quants.innerText = i.quantity.toLowerCase();
     container.appendChild(quants);
     card.appendChild(container)
-    document.getElementById("Products").appendChild(card)
+    document.getElementById("Products").appendChild(card);
 
+};
+
+function filter(value){
+
+    let buttons = document.querySelectorAll(".filterButtons");
+    buttons.forEach((button) => {
+        if(value.toUpperCase() == button.innerText.toUpperCase()){
+            button.classList.add("active");
+        } else{
+            button.classList.remove("active");
+        }
+    
+});
+//select all
+let elements = document.querySelectorAll(".card");
+elements.forEach((element)=>{
+    if (value == "all"){
+        element.classList.remove("hide");
+    } else {
+        if(element.classList.contains(value)){
+            element.classList.remove("hide")
+        }
+        else{
+            element.classList.add("hide")
+        }
+    }
+})
 }
+//all
+window.onload =() =>{
+    filter('all');
+
+};
 
 // let products = JSON.parse(localStorage.getItem('products ')) ?
 // JSON.parse(localStorage.getItem('products ')) : [

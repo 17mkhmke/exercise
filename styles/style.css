@@ -8,13 +8,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* Navigation Bar */
 
-/* header{
-    justify-content: space-between;
-    padding: 20px 80px;
-    background-color: darkred;
-} */
 .logo {
     width: 7rem;
 }
@@ -34,7 +28,7 @@
 .nav-link{
     margin-right:10px ;
     margin-left: 10px;
-    color: white;
+    color: black;
     text-transform: uppercase;
     
 }
@@ -67,7 +61,7 @@
     border-radius: 60px;
 }
 
-/* Sorting Section */
+/* ===================================Sorting Section ===================*/
 .Products {
     background-color: lightyellow;
 }
@@ -127,7 +121,7 @@
   background-color: transparent;
   color: goldenrod;
 }
-/* Products */
+/*======================= Products =========================*/
 #Products{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -158,28 +152,73 @@ img{
 .container h5{
   font-weight: 500;
 }
-/* .WhiskProd {
-    width: 12rem;
-    height: 8rem;
+/* Checkout */
+.container_{
+  display: flex;
+  width: 100%;
+  margin-bottom: 30px;
 }
-.BeerProd{
-    width: 12rem;
-    height: 8rem;
+.cartbar{
+
+  width: 100%;
+  border-radius: 5px;
+  height: 50px;
+  text-align: center;
+
 }
-.VodpProd{
-    width: 12rem;
-    height: 8rem;
+/* ===========================Admin Input======================== */
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: lightyellow;
+  
 }
-h1 {
-    font-weight: 700;
-    
-} */
+.inputBox{
+
+  position: relative;
+  width: 250px;
+}
+.inputBox input{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid goldenrod;
+  background: lightyellow;
+  border-radius: 5px;
+  outline: none;
+  color: black;
+  font-size: 1em;
+  
+}
+.inputBox span{
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  font-size: 1em;
+  color:goldenrod;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+.inputBox input:valid ~span,
+.inputBox input:focus ~span{
+  color: red;
+  transform:translate(10px) translateY(-7px);
+  padding: 0 10px;
+  background: lightyellow;
+  border-left: 1px solid goldenrod;
+  border-right: 1px solid goldenrod;
+}
+h2{
+  color: red;
+}
 
 /* footer */
 footer{
   padding: 40px 0;
   font-weight: 200;
   background-color: rgb(255, 255, 255);
+  display: inline;
 }
 .footPic{
   width: 10rem;
