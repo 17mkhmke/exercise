@@ -23,13 +23,13 @@ integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipui
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav m-auto my-2 mb-lg-0 bg-danger">
           <li class="nav-item">
-            <a class="nav-link" id="highlight" href="index.html">Home</a>
+            <a class="nav-link" id="highlight" href="./index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="checkout.html"><i class="fa-solid fa-cart-plus"></i></a>
+            <a class="nav-link" href="./checkout.html"><i class="fa-solid fa-cart-plus"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="admin.html" >Admin</a>
+            <a class="nav-link" href="./admin.html" >Admin</a>
 
             
           </li>
@@ -44,13 +44,13 @@ integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipui
   <fieldset>
     <legend><h2>Add Product</h2></legend>
   
-<form>
+<form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
 <div class="inputBox">
   <input type="text" required="required" id="id">
   <span>ID</span>
 </div>
 <div class="inputBox">
-  <input type="text" required="required" id="ProductName">
+  <input type="text" required="required" id="productName">
   <span>Product Name</span>
 </div>
 <div class="inputBox">
@@ -80,9 +80,11 @@ integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipui
 <div id="msg"></div><br>
 <fieldset>
   <legend>
-    <h2>Available Items</h2>
+    <h2 class="text-center">Available Items</h2>
   </legend>
-  <table class="table" id="table">
+  <div class="container"></div>
+  <table class="table bg-danger text-bg-primary table-bordered border-dark" id="productList">
+   
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -91,12 +93,26 @@ integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipui
         <th scope="col">Category</th>
         <th scope="col">Quantity</th>
         <th scope="col">Product Image</th>
+        <th scope="col">Configure</th>
       </tr>
     </thead>
-    
+    <tbody class="product-list">
+<tr>
+  <td>1</td>
+  <td>Budwiser</td>
+  <td>R100</td>
+  <td>Beer</td>
+  <td>360ml x 6</td>
+  <td><img src="./assets/BudSpecial.png"></td>
+  <td><a href="" class="btn btn-warning">Delete</a></i></td>
+  <td><a href="" class="btn btn-success">EDIT</a></i></td>
+
+</tr>
     </tbody>
   </table>
 </fieldset>
+<div id="showUsers"></div>
+
 <footer>
   <img src="./assets/FooterIMG.png" alt="footImg" class="footPic">
 <small>Not for sale to persons under age of 18. Drink responsibly</small>
