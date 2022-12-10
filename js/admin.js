@@ -1,5 +1,5 @@
- var products = {
-    data:[
+ var products =JSON.parse(localStorage.getItem('products'))?
+ JSON.parse(localStorage.getItem('products')) :[
         {
             id: 1,
             productName: "Budwiser",
@@ -96,9 +96,28 @@
             category: "wine",
             quantity : "5 litres"
         },
-    ],
-};
+    ];
 
+    let  fProducts = document.querySelector('tbody');
+    function show(){
+        products.forEach((item)=>{
+           fProducts.innerHTML +=
+           `
+           <tr id="name">
+           <th scope="row" id="name">${item.id}</th>
+           <td id="name2">${item.productName}</td>
+           <td id="name2">R${item.price}</td>
+           <td id="name4">${item.category}</td>
+           <td id="name4">${item.quantity}</td>
+           <td> <img class="adminImage" src='${item.image}'> </td>
+           
+           <td> <a href="" class="btn btn-warning btn-sm delete">DELETE</td>
+           <td> <a href="" class="btn btn-success btn-sm Edit onclick">EDIT</td>
+           </tr>
+           `
+       })
+    }
+    show()
 
 console.table(products.data);
 document.write
@@ -106,50 +125,17 @@ let add = document.querySelector('#btn')
 add.addEventListener('click',(e)=>{
     e.preventDefault();
     alert("Item added to storage");
-})
-// function onFormSubmit(){
-//     var formData = readFormData();
-//     insertNewRecord(formData);
-// }
-// function readFormData(){
-//     var formData ={};
-//     formData["id"] = document.getElementById("id").value;
-//     formData["ProductName"] = document.getElementById("productName").value;
-//     formData["price"] = document.getElementById("price").value;
-//     formData["category"] = document.getElementById("category").value;
-//     formData["quantity"] = document.getElementById("quantity").value;
-//     formData["image"] = document.getElementById("image").value;
-//     return formData;
-// }
+});
 
-// function insertNewRecord(data) {
-//     var table = document.getElementById("productList").getElementsByTagName('tbody')[0];
-//     var newRow = table.insertRow(table.length);
-//     cell1 = newRow.insertCell(0);
-//     cell1.innerHTML = data.id;
-//     cell2 = newRow.insertCell(1);
-//     cell2.innerHTML = data.productName;
-//     cell3 = newRow.insertCell(2);
-//     cell3.innerHTML = data.price;
-//     cell4 = newRow.insertCell(3);
-//     cell4.innerHTML = data.category;
-//     cell5 = newRow.insertCell(4);
-//     cell5.innerHTML = data.quantity;
-//     cell6 = newRow.insertCell(5);
-//     cell6.innerHTML = `<a>Edit</a><a>Delete</a>`;
-// }
+//Delete DATA
 
-// function submit(){
-//     var dataEntered = retrieveData();
-// }
-// function retrieveData(){
-//     var id = document.getElementById("id").value;
-//     var productName = document.getElementById("productName").value;
-//     var price = document.getElementById("price").value;
-//     var category = document.getElementById("category").value;
-//     var quantity = document.getElementById("quantity").value;
-//     var image = document.getElementById("image").value;
-//    var products =[id, productName, price, category, quantity, image];
-//    return products;
-// }
-
+// console.log(id)
+        // document.querySelector('#tbody').innerHTML =``
+        document.querySelector('.delete')
+        let phones = JSON.parse(localStorage.getItem('fProducts'));
+        phones.splice(id, 1)
+        // console.log(phones)
+        localStorage.setItem('fProducts', JSON.stringify(fProducts))
+        // console.table(JSON.parse(localStorage.phones))
+        show();
+        // console.table(phones)
